@@ -9,7 +9,7 @@ pipeline{
         branches: [[name: '*/main']],
         extensions: [[$class: 'CloneOption', timeout: 120]],
         gitTool: 'Default', 
-        userRemoteConfigs: [[url: 'https://github.com/dhkad/ATA.git']]
+        userRemoteConfigs: [[url: 'https://github.com/preetidogra/ATA-DhafifRevisedRepo']]
     ])
            	checkout scm
         }
@@ -21,7 +21,7 @@ pipeline{
        		branches: [[name: '*/main']],
         	extensions: [[$class: 'CloneOption', timeout: 120]],
         	gitTool: 'Default', 
-        	userRemoteConfigs: [[url: 'https://github.com/dhkad/ATA.git']]
+        	userRemoteConfigs: [[url: 'https://github.com/preetidogra/ATA-DhafifRevisedRepo']]
     		])
 		withMaven(maven: 'maven_3_8_4') {
                     sh 'mvn clean install'
@@ -46,10 +46,10 @@ pipeline{
         	branches: [[name: '*/main']],
         	extensions: [[$class: 'CloneOption', timeout: 120]],
         	gitTool: 'Default', 
-        	userRemoteConfigs: [[url: 'https://github.com/dhkad/ATA.git']]
+        	userRemoteConfigs: [[url: 'https://github.com/preetidogra/ATA-DhafifRevisedRepo']]
 			 ]) 
 		cucumber buildStatus: "UNSTABLE",
-		fileIncludePattern: "**/cucumber.json",
+		fileIncludePattern: "**/reports.json",
                 jsonReportDirectory: 'target'}}
 
 }
