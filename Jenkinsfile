@@ -23,7 +23,7 @@ pipeline{
         	gitTool: 'Default', 
         	userRemoteConfigs: [[url: 'https://github.com/preetidogra/ATA-DhafifRevisedRepo']]
     		])
-		withMaven(maven: 'maven_3_8_4') {
+		withMaven(maven: 'maven_3_8_6') {
                     sh 'mvn clean install'
 		 }}}
 			  
@@ -36,7 +36,7 @@ pipeline{
         	gitTool: 'Default', 
         	userRemoteConfigs: [[url: 'https://github.com/dhkad/ATA.git']]
    		 ])
-		withMaven(maven: 'maven_3_8_4'){
+		withMaven(maven: 'maven_3_8_6'){
 		sh'mvn test'}}}
 			  
 	stage("Cucumber Report"){
